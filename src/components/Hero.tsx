@@ -37,7 +37,7 @@ const Hero = () => {
               className="text-h2 font-heading font-semibold text-body animate-fade-in"
               style={{ animationDelay: "0.6s" }}
             >
-              Backend Developer | DSA Enthusiast
+              Fullstack Developer | DSA Enthusiast
             </h2>
             <p
               className="text-body-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in"
