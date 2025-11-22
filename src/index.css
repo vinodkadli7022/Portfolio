@@ -1,0 +1,114 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Dark tech portfolio theme */
+    --background: 210 25% 8%;
+    --foreground: 0 0% 100%;
+
+    --card: 210 20% 12%;
+    --card-foreground: 0 0% 90%;
+
+    --popover: 210 20% 12%;
+    --popover-foreground: 0 0% 90%;
+
+    --primary: 187 100% 50%;
+    --primary-foreground: 210 25% 8%;
+
+    --secondary: 210 20% 18%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 210 15% 15%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 187 100% 50%;
+    --accent-foreground: 210 25% 8%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 20%;
+    --input: 210 15% 20%;
+    --ring: 187 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* Custom tokens for portfolio */
+    --hero-gradient-from: 210 25% 8%;
+    --hero-gradient-to: 210 20% 12%;
+    --glow: 187 100% 50%;
+    --text-body: 0 0% 90%;
+    --text-heading: 0 0% 100%;
+
+    /* Transition timing */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    --background: 210 25% 8%;
+    --foreground: 0 0% 100%;
+    --card: 210 20% 12%;
+    --card-foreground: 0 0% 90%;
+    --popover: 210 20% 12%;
+    --popover-foreground: 0 0% 90%;
+    --primary: 187 100% 50%;
+    --primary-foreground: 210 25% 8%;
+    --secondary: 210 20% 18%;
+    --secondary-foreground: 0 0% 90%;
+    --muted: 210 15% 15%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 187 100% 50%;
+    --accent-foreground: 210 25% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 210 15% 20%;
+    --input: 210 15% 20%;
+    --ring: 187 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-heading;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-heading {
+    color: hsl(var(--text-heading));
+  }
+
+  .text-body {
+    color: hsl(var(--text-body));
+  }
+
+  .glow-text {
+    text-shadow: 0 0 20px hsl(var(--glow) / 0.5);
+  }
+
+  .glow-border {
+    box-shadow: 0 0 20px hsl(var(--glow) / 0.3);
+  }
+
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-from)) 0%, hsl(var(--hero-gradient-to)) 100%);
+  }
+}
