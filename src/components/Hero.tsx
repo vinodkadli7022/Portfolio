@@ -43,8 +43,8 @@ const Hero = () => {
               className="text-body-lg text-muted-foreground max-w-2xl mx-auto animate-fade-in"
               style={{ animationDelay: "0.8s" }}
             >
-              B.Tech Student specializing in Node.js/Express, mastering Data Structures & Algorithms, and preparing
-              for placements in 2026. Building scalable backend solutions with clean, efficient code.
+              B.Tech Student specializing in Node.js/Express, mastering Data Structures & Algorithms
+              . Building scalable backend solutions with clean, efficient code.
             </p>
           </div>
 
