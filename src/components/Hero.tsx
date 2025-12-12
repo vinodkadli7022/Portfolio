@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, ArrowDown } from "lucide-react";
+import { Github, Linkedin, Mail, ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import heroBackground from "@/assets/hero-background.jpg";
 
@@ -8,6 +8,12 @@ const Hero = () => {
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
+  };
+
+  const handleResumeDownload = () => {
+    // Convert Google Drive view link to direct download link
+    const resumeUrl = "https://drive.google.com/uc?export=download&id=1A4W0S-BSCOSU_3Z3VPyZwNG0Q12hswLh";
+    window.open(resumeUrl, "_blank");
   };
 
   return (
@@ -63,6 +69,15 @@ const Hero = () => {
               onClick={() => scrollToSection("#contact")}
             >
               Contact Me
+            </Button>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-primary text-primary hover:bg-primary/10 font-semibold gap-2"
+              onClick={handleResumeDownload}
+            >
+              <Download size={20} />
+              Download Resume
             </Button>
           </div>
 

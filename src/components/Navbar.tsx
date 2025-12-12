@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Navbar = () => {
@@ -31,11 +31,16 @@ const Navbar = () => {
     }
   };
 
+  const handleResumeDownload = () => {
+    // Convert Google Drive view link to direct download link
+    const resumeUrl = "https://drive.google.com/uc?export=download&id=1A4W0S-BSCOSU_3Z3VPyZwNG0Q12hswLh";
+    window.open(resumeUrl, "_blank");
+  };
+
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border" : "bg-transparent"
+        }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
@@ -55,6 +60,15 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+            <Button
+              variant="outline"
+              size="sm"
+              className="border-primary text-primary hover:bg-primary/10 font-medium gap-2"
+              onClick={handleResumeDownload}
+            >
+              <Download size={16} />
+              Resume
+            </Button>
             <Button
               variant="default"
               size="sm"
@@ -91,6 +105,17 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
+            <Button
+              variant="outline"
+              className="w-full border-primary text-primary hover:bg-primary/10 gap-2"
+              onClick={() => {
+                handleResumeDownload();
+                setIsMobileMenuOpen(false);
+              }}
+            >
+              <Download size={16} />
+              Download Resume
+            </Button>
             <Button
               variant="default"
               className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
