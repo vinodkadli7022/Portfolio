@@ -83,7 +83,7 @@ const Hero = () => {
 
           <div className="flex gap-6 justify-center animate-fade-in" style={{ animationDelay: "1.2s" }}>
             <a
-              href="https://github.com"
+              href="https://github.com/vinodkadli7022"
               target="_blank"
               rel="noopener noreferrer"
               className="text-muted-foreground hover:text-primary transition-all hover:scale-110"
